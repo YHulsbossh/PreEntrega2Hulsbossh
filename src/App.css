@@ -1,0 +1,49 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+#barra{
+  background-color: #FFC0CB;
+}
+
+.busqueda {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.input{
+  padding: 5px;
+
+}
+
+.boton {
+  background-color: #FFC0CB;
+}
+
+.card {
+ background-color: #FFC0CB;  
+}
+
+.card-img {
+  height: 330px;
+}
+
+.dropdown-menu{
+  background-color: #FFC0CB;  
+}
+
+.ver-mas{
+  background-color: #fb788e;   
+  border: 1px black;
+}
+
+.footer{
+background-color:#f6a4b2;
+}
+
+.imagenFooter{
+  width: 50px;
+  height: 45px;
+}
