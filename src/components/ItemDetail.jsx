@@ -1,9 +1,19 @@
 import ItemCount from "./ItemCount"
-import { useEffect, useState } from "react";
+import { useEffect, useState , useContext } from "react";
+import {CartContext} from "./context/CartContext";
+
+
 
 
 const ItemDetail = ({producto}) => {
+    const {addItem} = useContext(CartContext);
     const [item, setItem] = useState({});
+    
+
+    const onCarrito = (quantity) => {
+        addItem(item , quantity);
+    };
+    
 
     useEffect(() => {
         setItem(producto);
@@ -13,13 +23,13 @@ const ItemDetail = ({producto}) => {
         <div className="container m-3  text-center">
             <div className="row">
                 <div className="col-md-7">
-                    <img src={item.imagen}  className="img-fluid" alt={item.titulo}/>
+                    <img src={item.imagen}  className="img-fluid" alt={item.nombre}/>
                 </div>
-                <div className="col-md-5">
-                    <h2>{item.titulo}</h2>
-                    <h4>{item.descripcion}</h4>
-                    <h5><b>${item.precio}</b></h5>
-                    <ItemCount stock={item.stock} />
+                <div className="col-md-5 p-3">
+                    <h2 className="p-2">{item.nombre}</h2>
+                    <h4 className="p-2">{item.descripcion}</h4>
+                    <h5 className="p-2"><b>${item.precio}</b></h5>
+                    <ItemCount stock={item.stock} onCarrito={onCarrito} />
                 </div>
                 
             </div>
